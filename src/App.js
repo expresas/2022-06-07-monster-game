@@ -93,7 +93,6 @@ function App() {
       <Player image={getPlayerImage} name="Player" state={getPlayerState}/>
       <div className="buttons"><button onClick={countRandomValues}>{(getPlayerState <= 0 || getMonsterState <= 0) ? 'Start new game!' : 'Press me!'}</button></div>      
       <Player image={getMonsterImage} name="Monster" state={getMonsterState}/>
-      
 
     </div>
   );

@@ -1,5 +1,9 @@
+body {
+  background-color: rgb(215, 215, 215);
+}
+
 .wrapper {
-  background-color: antiquewhite;
+  background-color: white;
   margin: 10px auto;
   width: 700px;
   height: 400px;

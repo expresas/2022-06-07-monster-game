@@ -12,12 +12,17 @@ const Player = ({image, name, state}) => {
     stateStyle = {width: '0%'}
   }
 
+  let imageStyleBlured = {}
+  if (state <= 0) {
+    imageStyleBlured = {filter: 'blur(10px)'}
+  }
+
 
 
   return (
     <div className='player'>
       <h1>{name}</h1>
-      <div className="playerImage"><img src={image} alt="" /></div>
+      <div className="playerImage"><img style={imageStyleBlured} src={image} alt="{name}" /></div>
       <div className="playerHealthBar">
         <div className="statusBar" style={stateStyle}></div>
       </div>

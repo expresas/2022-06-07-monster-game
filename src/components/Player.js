@@ -7,7 +7,7 @@ const Player = ({image, name, state}) => {
   let stateStyle = {}
 
   if (state > 0) {
-    stateStyle = {width: state+'%'}
+    stateStyle = {width: state+'%', borderRight: '1px solid white'}
   } else {
     stateStyle = {width: '0%'}
   }
@@ -22,11 +22,11 @@ const Player = ({image, name, state}) => {
   return (
     <div className='player'>
       <h1>{name}</h1>
-      <div className="playerImage"><img style={imageStyleBlured} src={image} alt="{name}" /></div>
+      <div className="playerImage"><img style={imageStyleBlured} src={image} alt={name} /></div>
       <div className="playerHealthBar">
         <div className="statusBar" style={stateStyle}></div>
       </div>
-      <div className="playerHealthPercent">{state > 0 ? state+'%' : 'Dead'}</div>
+      <div className="playerHealthPercent">{state > 0 ? 'Health '+state+'%' : 'Dead'}</div>
       
     </div>
   )

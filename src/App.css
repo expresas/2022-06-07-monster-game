@@ -2,7 +2,7 @@
   background-color: antiquewhite;
   margin: 10px auto;
   width: 700px;
-  height: 500px;
+  height: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -14,7 +14,7 @@
 .player {
   /* background-color: azure; */
   width: 30%;
-  height: 80%;
+  height: 90%;
 }
 
 .playerImage {
@@ -53,7 +53,7 @@ h1 {
 
 .buttons {
   width: 20%;
-  height: 80%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;

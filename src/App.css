@@ -107,6 +107,7 @@ h1 {
 
 .elixir > img:hover {
   transform: scale(1.25);
+  cursor: pointer;
 }
 
 .weapons {

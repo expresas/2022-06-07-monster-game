@@ -81,46 +81,55 @@ function App() {
       startNewGame()
       return
     } else {
-      let playerRandom = 0
+      let playerRandom = Math.ceil(Math.random() * 10)
       let monsterRandom = 0
       const goldRandom = Math.ceil(Math.random() * 10)
+      let playerMessage = `Player damaged: ${playerRandom}`
 
       if (!getWeapon) {
-        playerRandom = Math.ceil(Math.random() * 10)
         monsterRandom = Math.ceil(Math.random() * 10)
+        setPlayerState(getPlayerState - playerRandom)
       }
 
       if (getWeapon === 'bow') {
         // maxDamage: 7,
         // effect: "30% chance to do double damage"
-        playerRandom = Math.ceil(Math.random() * 10)
         monsterRandom = Math.ceil(Math.random() * 7)
         if (randomPercentage(30)) monsterRandom = monsterRandom * 2
+        setPlayerState(getPlayerState - playerRandom)
       }
 
       if (getWeapon === 'sword') {
         // maxDamage: 13,
         // effect: "25% chance to dodge enemy attack"
-        playerRandom = Math.ceil(Math.random() * 10)
         monsterRandom = Math.ceil(Math.random() * 13)
-        if (randomPercentage(25)) playerRandom = 0
+        if (randomPercentage(25)) {
+          playerMessage = `Player dodged monster's attack`
+        } else {
+          setPlayerState(getPlayerState - playerRandom)
+        }
       }
 
       if (getWeapon === 'wand') {
         // maxDamage: 10,
         // effect: "30% chance to heal yourself 10hp, on hit"
-        playerRandom = Math.ceil(Math.random() * 10)
         monsterRandom = Math.ceil(Math.random() * 10)
-        if (randomPercentage(30)) playerRandom = playerRandom - 10
+        if (randomPercentage(30)) {
+          if (getPlayerState <= 90) {
+            setPlayerState(getPlayerState + 10)
+          } else {
+            setPlayerState(100)
+          }
+          playerMessage = `Player's health: +10`
+        } else {
+          setPlayerState(getPlayerState - playerRandom)
+        }
       }
-      
-      
-      
-      const playerMessage = `Player damaged: ${playerRandom}`
+            
       const monsterMessage = `Monster damaged: ${monsterRandom}`
       const goldMessage = `Gold added to basket: ${goldRandom}`
 
-      setPlayerState(getPlayerState - playerRandom)
+      // setPlayerState(getPlayerState - playerRandom)
       setMonsterState(getMonsterState - monsterRandom)
       setGoldState(getGoldState + goldRandom)
       
@@ -132,12 +141,6 @@ function App() {
     return percent >= Math.floor(Math.random() * 100) + 1
   }
   // console.log('50% = ', randomPercentage(50))
-
-
-
-
-
-  
 
   function buyElixir() {
     if (getGoldState >= 50) {

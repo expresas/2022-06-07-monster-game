@@ -1,8 +1,9 @@
 import React from 'react'
+import Weapons from './Weapons'
 
-const Player = ({image, name, state}) => {
+const Player = ({image, name, state, showWeapons, testas, weapon}) => {
 
-  console.log(state)
+  console.log(showWeapons)
 
   let stateStyle = {}
 
@@ -17,8 +18,6 @@ const Player = ({image, name, state}) => {
     imageStyleBlured = {filter: 'blur(10px)'}
   }
 
-
-
   return (
     <div className='player'>
       <h1>{name}</h1>
@@ -27,7 +26,8 @@ const Player = ({image, name, state}) => {
         <div className="statusBar" style={stateStyle}></div>
       </div>
       <div className="playerHealthPercent">{state > 0 ? 'Health '+state+'%' : 'Dead'}</div>
-      
+      {showWeapons ? <Weapons testas={testas} weapon={weapon}/> : ''}
+
     </div>
   )
 }

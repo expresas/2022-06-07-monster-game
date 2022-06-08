@@ -26,7 +26,11 @@ import playerImage10 from './assets/images/artboard-19.svg'
 import playerImage11 from './assets/images/artboard-20.svg'
 import playerImage12 from './assets/images/artboard-21.svg'
 
+import elixirImage from './assets/images/elixir.svg'
+
 import { useState } from 'react';
+import MessageLog from './components/MessageLog';
+import Gold from './components/Gold';
 
 function App() {
 
@@ -68,15 +72,40 @@ function App() {
   const [getMonsterState, setMonsterState] = useState(100)
   const [getMonsterImage, setMonsterImage] = useState(randomMonster())
   const [getPlayerImage, setPlayerImage] = useState(randomPlayer())
+  const [getGoldState, setGoldState] = useState(0)
+  const [getMessageState, setMessageState] = useState([])
+  const [getWeapon, setWeapon] = useState('')
 
   function countRandomValues() {
     if (getPlayerState <= 0 || getMonsterState <= 0) {
       startNewGame()
       return
     } else {
-      setPlayerState(getPlayerState - Math.ceil(Math.random() * 10))
-      setMonsterState(getMonsterState - Math.ceil(Math.random() * 10))
+      const playerRandom = Math.ceil(Math.random() * 10)
+      const monsterRandom = Math.ceil(Math.random() * 10)
+      const goldRandom = Math.ceil(Math.random() * 10)
+
+      const playerMessage = `Player damaged: -${playerRandom}`
+      const monsterMessage = `Monster damaged: -${monsterRandom}`
+      const goldMessage = `Gold added to basket: +${goldRandom}`
+
+      setMessageState([playerMessage, monsterMessage, goldMessage, '---', ...getMessageState])
+
+      setPlayerState(getPlayerState - playerRandom)
+      setMonsterState(getMonsterState - monsterRandom)
+      setGoldState(getGoldState + goldRandom)
     }
+  }
+
+  function buyElixir() {
+    if (getGoldState >= 50) {
+      setGoldState(getGoldState - 50)
+      setPlayerState(100)
+      setMessageState(['Player bought elixir for -50 gold', '---', ...getMessageState])
+    } else {
+      setMessageState(['Too little gold to buy an elixir, it cost 50 gold', '---', ...getMessageState])
+    }
+
   }
   
   function startNewGame() {
@@ -84,18 +113,62 @@ function App() {
     setMonsterState(100)
     setMonsterImage(randomMonster())
     setPlayerImage(randomPlayer())
+    setGoldState(0)
+    setMessageState([])
+    document.querySelectorAll('.weapon').forEach(element => {
+      element.classList.remove('selected')
+    })
+    setWeapon('')
+  }
+
+  function test1(weapon) {
+    if (getWeapon === weapon) {
+      setMessageState([`Player don't have weapon`, '---', ...getMessageState])
+      setWeapon('')      
+    } else {
+      setMessageState(['Player has weapon: ' + weapon, '---', ...getMessageState])
+      setWeapon(weapon)
+    }
+    console.log('Paspausta:', weapon)
   }
 
 
   return (
     <div className="wrapper">
       
-      <Player image={getPlayerImage} name="Player" state={getPlayerState}/>
-      <div className="buttons"><button onClick={countRandomValues}>{(getPlayerState <= 0 || getMonsterState <= 0) ? 'Start new game!' : 'Press me!'}</button></div>      
-      <Player image={getMonsterImage} name="Monster" state={getMonsterState}/>
+      <Player image={getPlayerImage} name="Player" state={getPlayerState} showWeapons={true} testas={test1} weapon={getWeapon}/>
+      {/* <div className="weapons">shvbksha</div> */}
+      <div className="control">
+        <Gold state={getGoldState}/>
+        <div className="elixir"><img onClick={buyElixir} src={elixirImage} alt="Elixir" /></div>
+        <button onClick={countRandomValues}>{(getPlayerState <= 0 || getMonsterState <= 0) ? 'Start new game!' : 'Press me!'}</button>
+        <MessageLog messages={getMessageState}/>
+      </div>      
+      <Player image={getMonsterImage} name="Monster" state={getMonsterState} showWeapons={false}/>
 
     </div>
   );
 }
 
 export default App;
+
+// const weapons = [
+//   {
+//       name: "sword",
+//       image: "https://thumbs.dreamstime.com/b/pixel-video-game-sword-icon-cartoon-retro-style-set-107893340.jpg",
+//       maxDamage: 13,
+//       effect: "25% chance to dodge enemy attack"
+//   },
+//   {
+//       name: "bow",
+//       image: "https://preview.pixlr.com/images/800wm/100/1/1001519968.jpg",
+//       maxDamage: 7,
+//       effect: "30% chance to do double damage"
+//   },
+//   {
+//       name: "wand",
+//       image: "https://preview.pixlr.com/images/800wm/100/1/1001469305.jpg",
+//       maxDamage: 10,
+//       effect: "30% chance to heal yourself 10hp, on hit"
+//   },
+// ]

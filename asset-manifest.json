@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/2022-06-07-monster-game/static/css/main.d81fde63.css",
+    "main.js": "/2022-06-07-monster-game/static/js/main.41905777.js",
+    "static/js/787.b0b8bf9d.chunk.js": "/2022-06-07-monster-game/static/js/787.b0b8bf9d.chunk.js",
+    "static/media/bow.min.svg": "/2022-06-07-monster-game/static/media/bow.min.d60690b0a79281f1dac6b12ee6dc7eb4.svg",
+    "static/media/kidaha-03.svg": "/2022-06-07-monster-game/static/media/kidaha-03.d65ed8e44f4adae45be6b4df839612e5.svg",
+    "static/media/kidaha-01.svg": "/2022-06-07-monster-game/static/media/kidaha-01.44533d08b30f851be4cd9bace7a02800.svg",
+    "static/media/kidaha-07.svg": "/2022-06-07-monster-game/static/media/kidaha-07.0276a7b82ba0ce9535e8b866d416efd6.svg",
+    "static/media/kidaha-05.svg": "/2022-06-07-monster-game/static/media/kidaha-05.195c97f6dea733bc4d152901e96ce922.svg",
+    "static/media/kidaha-08.svg": "/2022-06-07-monster-game/static/media/kidaha-08.13bbcd673f883b762e6303be8dd4a950.svg",
+    "static/media/kidaha-06.svg": "/2022-06-07-monster-game/static/media/kidaha-06.d60427fc3d2dfe912932195d996cccb1.svg",
+    "static/media/kidaha-02.svg": "/2022-06-07-monster-game/static/media/kidaha-02.561687dd01c3fc118320ebaec17f80d5.svg",
+    "static/media/kidaha-11.svg": "/2022-06-07-monster-game/static/media/kidaha-11.49e12706f1f732c6275ad068f8f29c47.svg",
+    "static/media/kidaha-04.svg": "/2022-06-07-monster-game/static/media/kidaha-04.2321b3f435415db687488c7b7ce8a0cb.svg",
+    "static/media/kidaha-09.svg": "/2022-06-07-monster-game/static/media/kidaha-09.338bc305f5d6eeb08d72581019fe2a57.svg",
+    "static/media/kidaha-12.svg": "/2022-06-07-monster-game/static/media/kidaha-12.42bb06a8396914ce79c23a540187013b.svg",
+    "static/media/artboard-12.svg": "/2022-06-07-monster-game/static/media/artboard-12.b374668b8da30c13aa655d8f977f8fbd.svg",
+    "static/media/kidaha-10.svg": "/2022-06-07-monster-game/static/media/kidaha-10.29eae90e02410e6fb825232a4ed0e055.svg",
+    "static/media/artboard-13.svg": "/2022-06-07-monster-game/static/media/artboard-13.1def9152fd503aad79d4c388604538cc.svg",
+    "static/media/artboard-15.svg": "/2022-06-07-monster-game/static/media/artboard-15.1b7c692c1fc3e3082519aaaeb2c64e36.svg",
+    "static/media/artboard-17.svg": "/2022-06-07-monster-game/static/media/artboard-17.29c66f8625dc61d43377a43ef5ccfdae.svg",
+    "static/media/elixir.svg": "/2022-06-07-monster-game/static/media/elixir.06a8e7782bf7aea3717b0df167ad334f.svg",
+    "static/media/artboard-19.svg": "/2022-06-07-monster-game/static/media/artboard-19.d513ccff777338af657cde6632231835.svg",
+    "static/media/artboard-10.svg": "/2022-06-07-monster-game/static/media/artboard-10.66eee23833e2225209ac634d5426239c.svg",
+    "static/media/artboard-18.svg": "/2022-06-07-monster-game/static/media/artboard-18.3373a4717d8f2c4584e26d0faf40b3b7.svg",
+    "static/media/artboard-20.svg": "/2022-06-07-monster-game/static/media/artboard-20.8f23c64a34431fcc4070b714f9a887e3.svg",
+    "static/media/artboard-21.svg": "/2022-06-07-monster-game/static/media/artboard-21.ece7598dcce57d61cc21ccfa1dbeb5e8.svg",
+    "static/media/wand.min.svg": "/2022-06-07-monster-game/static/media/wand.min.53160859c0daf93b86688eaee0a03842.svg",
+    "static/media/artboard-16.svg": "/2022-06-07-monster-game/static/media/artboard-16.44352362d186eaa8fbe5f2a0873d7fff.svg",
+    "static/media/artboard-14.svg": "/2022-06-07-monster-game/static/media/artboard-14.d88a728c23b20b3fa386704ef9db0770.svg",
+    "static/media/artboard-11.svg": "/2022-06-07-monster-game/static/media/artboard-11.53b70c534712909d764a3aae6cfdf1fb.svg",
+    "static/media/sword.min.svg": "/2022-06-07-monster-game/static/media/sword.min.7fa07292182286efaf9e5b53e750e5a8.svg",
+    "index.html": "/2022-06-07-monster-game/index.html",
+    "main.d81fde63.css.map": "/2022-06-07-monster-game/static/css/main.d81fde63.css.map",
+    "main.41905777.js.map": "/2022-06-07-monster-game/static/js/main.41905777.js.map",
+    "787.b0b8bf9d.chunk.js.map": "/2022-06-07-monster-game/static/js/787.b0b8bf9d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d81fde63.css",
+    "static/js/main.41905777.js"
+  ]
+}
